@@ -173,7 +173,7 @@ export function MapContainer() {
         version: 8,
         glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
         sources: {
-          'osm-tiles': {
+          'carto-dark': {
             type: 'raster',
             tiles: [
               'https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
@@ -181,22 +181,26 @@ export function MapContainer() {
               'https://c.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
             ],
             tileSize: 256,
+            maxzoom: 19,
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
           },
         },
-        layers: [{ id: 'osm-tiles', type: 'raster', source: 'osm-tiles', minzoom: 0, maxzoom: 19 }],
+        layers: [
+          {
+            id: 'carto-dark-layer',
+            type: 'raster',
+            source: 'carto-dark',
+          },
+        ],
       },
       center: [-98.5, 39.5],
       zoom: 3.8,
       maxBounds: [[-130, 22], [-65, 52]],
+      preserveDrawingBuffer: true,
+      failIfMajorPerformanceCaveat: false,
     });
 
     map.addControl(new maplibregl.NavigationControl(), 'top-right');
-
-    // Log map errors for debugging
-    map.on('error', (e) => {
-      console.warn('MapLibre error:', e.error?.message || e);
-    });
 
     map.on('load', () => {
       mapLoaded.current = true;

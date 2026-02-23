@@ -13,7 +13,7 @@
     "@tailwindcss/vite": "^4.2.0",
     "@tanstack/react-table": "^8.21.3",
     "lucide-react": "^0.575.0",
-    "maplibre-gl": "^5.18.0",
+    "maplibre-gl": "^4.7.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "recharts": "^3.7.0",
@@ -30,6 +30,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
+    "netlify-cli": "^23.15.1",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
     "vite": "^6.3.5"

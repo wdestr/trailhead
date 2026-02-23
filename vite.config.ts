@@ -15,7 +15,6 @@ export default defineConfig({
       output: {
         manualChunks: {
           'vendor-charts': ['recharts'],
-          'vendor-map': ['maplibre-gl'],
         },
       },
     },
