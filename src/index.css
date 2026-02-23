@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #1A237E;
+  --color-navy-light: #283593;
+  --color-navy-dark: #0D1442;
+  --color-brand-orange: #FF6F00;
+  --color-brand-orange-light: #FFA040;
+  --color-brand-orange-glow: rgba(255, 111, 0, 0.25);
+  --color-surface: #0B1520;
+  --color-surface-card: #111E2E;
+  --color-surface-hover: #162838;
+  --color-text-primary: #E8EDF2;
+  --color-text-muted: #7B8FA6;
+  --color-text-dim: #4A5F78;
+  --color-border-default: rgba(255, 255, 255, 0.06);
+  --color-border-light: rgba(255, 255, 255, 0.10);
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-text-primary font-sans antialiased;
+    margin: 0;
+  }
+
+  * {
+    @apply border-border-default;
+  }
+
+  /* Selection styling */
+  ::selection {
+    background: rgba(255, 111, 0, 0.3);
+    color: #fff;
+  }
+
+  /* Focus ring for accessibility */
+  :focus-visible {
+    outline: 2px solid rgba(255, 111, 0, 0.5);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  /* Tooltip-like popups on the map */
+  .maplibregl-popup-content {
+    background: #fff !important;
+    border-radius: 8px !important;
+    padding: 6px 10px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+    font-family: 'DM Sans', system-ui, sans-serif !important;
+  }
+  .maplibregl-popup-tip {
+    border-top-color: #fff !important;
+  }
+
+  /* Range slider styling */
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 9999px;
+    cursor: pointer;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--color-brand-orange);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.15s;
+  }
+  input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--color-brand-orange);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+}
