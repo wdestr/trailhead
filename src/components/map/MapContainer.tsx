@@ -1,5 +1,6 @@
 import { useEffect, useRef, useCallback, useMemo } from 'react';
 import maplibregl from 'maplibre-gl';
+import 'maplibre-gl/dist/maplibre-gl.css';
 import { COLUMBIA_STORES } from '@/data/columbia-stores';
 import { COMPETITORS } from '@/data/competitors';
 import { DISTRIBUTION_CENTERS } from '@/data/distribution-centers';
